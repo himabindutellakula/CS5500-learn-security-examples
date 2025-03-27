@@ -31,13 +31,14 @@ It **does not sanitize user input** before storing it in the session (`req.sessi
 
 2. Briefly explain how a malicious attacker can exploit them.
 
-- **Malicious Redirects:** Injecting `<a href="http://malicious.site">Click here</a>` could lead users to harmful websites. 
-- **Cross-Site Scripting (XSS):** An attacker can inject JavaScript code into the `name` field, which will execute when user visits the page. For example, submitting `<script>alert('Hacked!')</script>` would trigger an alert box.   
-- **Phishing Attacks:** An attacker could insert a fake login form to trick users into entering credentials.  
+**Malicious Redirects:** Injecting `<a href="http://malicious.site">Click here</a>` could lead users to harmful websites. 
+**Cross-Site Scripting (XSS):** An attacker can inject JavaScript code into the `name` field, which will execute when user visits the page. For example, submitting `<script>alert('Hacked!')</script>` would trigger an alert box.   
+**Phishing Attacks:** An attacker could insert a fake login form to trick users into entering credentials.  
 
 3. Briefly explain why **secure.ts** does not have the same vulnerabilties?
 
 The **secure.ts** server mitigates the vulnerabilities by properly sanitizing user input before storing or displaying it. 
+
 **Input Sanitization with `escapeHTML()`**
 - The `escapeHTML()` function replaces special characters (`<`, `>`, `"`, `'`, `&`) with their HTML entity equivalents (`&lt;`, `&gt;`, `&quot;`, `&amp;`, `&#39;`), ensuring that user input is treated as plain text.
 - This sanitization **prevents XSS** attacks by rendering injected HTML elements or JavaScript code as harmless text, rather than executing them.
