@@ -31,9 +31,9 @@ It **does not sanitize user input** before storing it in the session (`req.sessi
 
 2. Briefly explain how a malicious attacker can exploit them.
 
-**Malicious Redirects:** Injecting `<a href="http://malicious.site">Click here</a>` could lead users to harmful websites. 
-**Cross-Site Scripting (XSS):** An attacker can inject JavaScript code into the `name` field, which will execute when user visits the page. For example, submitting `<script>alert('Hacked!')</script>` would trigger an alert box.   
-**Phishing Attacks:** An attacker could insert a fake login form to trick users into entering credentials.  
+**Malicious Redirects** - Injecting `<a href="http://malicious.site">Click here</a>` could lead users to harmful websites. 
+**Cross-Site Scripting (XSS)** - An attacker can inject JavaScript code into the `name` field, which will execute when user visits the page. For example, submitting `<script>alert('Hacked!')</script>` would trigger an alert box.   
+**Phishing Attacks:** - An attacker could insert a fake login form to trick users into entering credentials.  
 
 3. Briefly explain why **secure.ts** does not have the same vulnerabilties?
 
